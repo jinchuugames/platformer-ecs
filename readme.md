@@ -1,7 +1,7 @@
 # Brackey's Platformer
 
 
-![](https://github.com/user-attachments/assets/6b77f3e8-9790-409e-831d-ae22882f06e6)
+https://github.com/user-attachments/assets/6b77f3e8-9790-409e-831d-ae22882f06e6
 
 
 
