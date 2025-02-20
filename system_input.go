@@ -9,6 +9,8 @@ import (
 	"graphics.gd/variant/Vector2"
 )
 
+// InputSystem handles player input
+// It reads the input and sets the velocity of the player character based on the speed in its Movement component.
 type InputSystem struct {
 	f *generic.Filter2[GodotNode, Movement]
 }

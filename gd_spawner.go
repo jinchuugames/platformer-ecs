@@ -12,6 +12,7 @@ import (
 	"graphics.gd/variant/Vector2"
 )
 
+// Spawner will spawn a player in the world.
 type Spawner struct {
 	classdb.Extension[Spawner, Node.Instance] `gd:"NXRSpawner"`
 	Player                                    PackedScene.Instance

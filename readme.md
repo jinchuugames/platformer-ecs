@@ -1,5 +1,7 @@
 # Brackey's Platformer
 
+![](./docs/screen_recording.mp4)
+
 Brackey's released a recent tutorial for Godot on how to build a platform.
 
 What I tried to do differently is to use [graphics.gd](https://github.com/grow-graphics/gd) library, which lets us use Go to build extensions for Godot.

@@ -15,6 +15,7 @@ import (
 	"graphics.gd/variant/Float"
 )
 
+// World is the ECS world for the game
 type World struct {
 	classdb.Extension[World, Node.Instance] `gd:"NXRWorld"`
 	Player                                  PackedScene.Instance

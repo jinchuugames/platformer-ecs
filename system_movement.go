@@ -7,6 +7,8 @@ import (
 	"graphics.gd/classdb/CharacterBody2D"
 )
 
+// MovementSystem updates the position of the player character based on its velocity.
+// It shows how to use Godot's move_and_slide method to move a character from inside the ECS.
 type MovementSystem struct {
 	f *generic.Filter2[GodotNode, Movement]
 }

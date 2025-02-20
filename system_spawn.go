@@ -1,6 +1,9 @@
 package main
 
 import "github.com/mlange-42/arche/ecs"
+
+// SpawnSystem is a system that spawns the player character
+// It has an embedded spawner as the system handles the lifecycle only and runs the spawner on initialization.
 type SpawnSystem struct {
 	Spawner *Spawner
 }
