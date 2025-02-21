@@ -8,9 +8,10 @@ import (
 
 // Movement for any entity in the world that can move
 type Movement struct {
-	Position Vector2.XY
-	Velocity Vector2.XY
-	Speed    Float.X
+	Position     Vector2.XY
+	Velocity     Vector2.XY
+	Speed        Float.X
+	JumpVelocity Float.X
 }
 
 // GodotNode is a wrapper for a Godot node

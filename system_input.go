@@ -6,7 +6,6 @@ import (
 	"graphics.gd/classdb"
 	"graphics.gd/classdb/CharacterBody2D"
 	"graphics.gd/classdb/Input"
-	"graphics.gd/variant/Vector2"
 )
 
 // InputSystem handles player input
@@ -24,22 +23,24 @@ func (s *InputSystem) Update(w *ecs.World) {
 		if !ok {
 			continue
 		}
+		gravity := ecs.GetResource[Gravity](w)
+		delta := ecs.GetResource[DeltaTime](w)
+		velocity := body.Velocity()
+		if !body.IsOnFloor() {
+			velocity.Y += gravity.Value * delta.Delta
+		} else {
+			velocity.Y = 0
+		}
+		if Input.IsActionPressed(PlayerControls.MoveUp) && body.IsOnFloor() {
+			velocity.Y = mvmt.JumpVelocity
+		}
 
-		velocity := Vector2.XY{X: 0, Y: 0}
+		velocity.X = 0
 		if Input.IsActionPressed(PlayerControls.MoveRight) {
-			velocity.X += 1
+			velocity.X += mvmt.Speed
 		}
 		if Input.IsActionPressed(PlayerControls.MoveLeft) {
-			velocity.X -= 1
-		}
-		if Input.IsActionPressed(PlayerControls.MoveDown) {
-			velocity.Y += 1
-		}
-		if Input.IsActionPressed(PlayerControls.MoveUp) {
-			velocity.Y -= 1
-		}
-		if Vector2.Length(velocity) > 0 {
-			velocity = Vector2.MulX(Vector2.Normalized(velocity), mvmt.Speed)
+			velocity.X -= mvmt.Speed
 		}
 		body.SetVelocity(velocity)
 	}

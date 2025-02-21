@@ -26,9 +26,10 @@ func (s *Spawner) SpawnPlayer(w *ecs.World) {
 	s.Super().AddChild(player)
 	p := &GodotNode{player}
 	mvmt := &Movement{
-		Position: Vector2.XY{X: 0, Y: 0},
-		Velocity: Vector2.XY{X: 0, Y: 0},
-		Speed:    100,
+		Position:     Vector2.XY{X: 0, Y: 0},
+		Velocity:     Vector2.XY{X: 0, Y: 0},
+		Speed:        100,
+		JumpVelocity: -150,
 	}
 	body, ok := classdb.As[CharacterBody2D.Instance](Node.Instance(player))
 	if !ok {
