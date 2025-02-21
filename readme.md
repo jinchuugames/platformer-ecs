@@ -1,6 +1,9 @@
 # Brackey's Platformer
 
-![](./docs/screen_recording.mp4)
+
+https://github.com/user-attachments/assets/6b77f3e8-9790-409e-831d-ae22882f06e6
+
+
 
 Brackey's released a recent tutorial for Godot on how to build a platform.
 
